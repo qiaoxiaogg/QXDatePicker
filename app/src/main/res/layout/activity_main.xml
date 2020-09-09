@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_mode_double"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:padding="10dp"
+        android:text="双选模式"
+        android:textColor="@color/color_000000"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/ll_picker_year_month_day"
+        style="@style/common_ll_label"
+        app:layout_constraintStart_toStartOf="@id/tv_mode_double"
+        app:layout_constraintTop_toBottomOf="@id/tv_mode_double">
+
+        <TextView
+            style="@style/common_tv_label_key"
+            android:text="YEAR_MONTH_DAY" />
+
+        <TextView
+            android:id="@+id/tv_picker_year_month_day"
+            style="@style/common_tv_label_value"
+            android:hint="选择时间段" />
+
+        <ImageView
+            style="@style/common_iv_label"
+            android:src="@drawable/icon_date_grey" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_picker_year_month"
+        style="@style/common_ll_label"
+        app:layout_constraintStart_toStartOf="@id/ll_picker_year_month_day"
+        app:layout_constraintTop_toBottomOf="@id/ll_picker_year_month_day">
+
+        <TextView
+            style="@style/common_tv_label_key"
+            android:text="YEAR_MONTH" />
+
+        <TextView
+            android:id="@+id/tv_picker_year_month"
+            style="@style/common_tv_label_value"
+            android:hint="选择时间段" />
+
+        <ImageView
+            style="@style/common_iv_label"
+            android:src="@drawable/icon_date_grey" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_picker_hour_minute"
+        style="@style/common_ll_label"
+        app:layout_constraintStart_toStartOf="@id/ll_picker_year_month_day"
+        app:layout_constraintTop_toBottomOf="@id/ll_picker_year_month">
+
+        <TextView
+            style="@style/common_tv_label_key"
+            android:text="HOUR_MINUTE" />
+
+        <TextView
+            android:id="@+id/tv_picker_hour_minute"
+            style="@style/common_tv_label_value"
+            android:hint="选择时间段" />
+
+        <ImageView
+            style="@style/common_iv_label"
+            android:src="@drawable/icon_date_grey" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_mode_single"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="单选模式"
+        android:textColor="@color/color_000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/tv_mode_double"
+        app:layout_constraintTop_toBottomOf="@id/ll_picker_hour_minute"
+       />
+
+
+    <LinearLayout
+        android:id="@+id/ll_picker_year_month_day_hour_minute_key"
+        style="@style/common_ll_label"
+        android:paddingBottom="0pt"
+        app:layout_constraintStart_toStartOf="@id/ll_picker_hour_minute"
+        app:layout_constraintTop_toBottomOf="@id/tv_mode_single">
+
+        <TextView
+            style="@style/common_tv_label_key"
+            android:text="YEAR_MONTH_DAY_HOUR_MINUTE" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_picker_year_month_day_hour_minute"
+        style="@style/common_ll_label"
+        android:paddingTop="0pt"
+        app:layout_constraintStart_toStartOf="@id/ll_picker_hour_minute"
+        app:layout_constraintTop_toBottomOf="@id/ll_picker_year_month_day_hour_minute_key">
+
+
+        <TextView
+            android:id="@+id/tv_picker_year_month_day_hour_minute"
+            style="@style/common_tv_label_value"
+            android:gravity="start"
+            android:hint="选择时间" />
+
+        <ImageView
+            style="@style/common_iv_label"
+            android:src="@drawable/icon_date_grey" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
