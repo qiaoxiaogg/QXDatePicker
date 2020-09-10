@@ -140,15 +140,15 @@ public class DateScrollerDialog extends DialogFragment implements View.OnClickLi
         Calendar calendar = Calendar.getInstance();
         Calendar calendar2 = Calendar.getInstance();
         //这里根据项目实际需求 自定义设置属性参数
-        switch (mScrollerConfig.mMode){
+        switch (mScrollerConfig.mMode) {
             case DOUBLE_MODE:
                 switch (mScrollerConfig.mType) {
-                    case HOURS_MINS:
+                    case HOURS_MINS://开始时间-结束时间(时分-时分)
                         calendar.set(mTimeWheel.getCurrentYear(), mTimeWheel.getCurrentMonth() - 1, mTimeWheel.getCurrentDay(), mTimeWheel.getCurrentHour(), mTimeWheel.getCurrentMinute(), 0);
                         calendar2.set(mTimeWheel.getCurrentFinishYear(), mTimeWheel.getCurrentFinishMonth() - 1, mTimeWheel.getCurrentFinishDay(), mTimeWheel.getCurrentFinishHour(), mTimeWheel.getCurrentFinishMinute(), 59);
-
                         break;
                     default:
+                        //默认开始时间-结束时间  (年月日-年月日)
                         calendar.set(mTimeWheel.getCurrentYear(), mTimeWheel.getCurrentMonth() - 1, mTimeWheel.getCurrentDay(), 0, 0, 0);
                         calendar2.set(mTimeWheel.getCurrentFinishYear(), mTimeWheel.getCurrentFinishMonth() - 1, mTimeWheel.getCurrentFinishDay(), 23, 59, 59);
                         break;
@@ -160,11 +160,7 @@ public class DateScrollerDialog extends DialogFragment implements View.OnClickLi
                 }
                 break;
             case SINGLE_MODE:
-                switch (mScrollerConfig.mType){
-                    case ALL:
-                        calendar.set(mTimeWheel.getCurrentYear(), mTimeWheel.getCurrentMonth() - 1, mTimeWheel.getCurrentDay(), mTimeWheel.getCurrentHour(), mTimeWheel.getCurrentMinute(), 0);
-                        break;
-                }
+                calendar.set(mTimeWheel.getCurrentYear(), mTimeWheel.getCurrentMonth() - 1, mTimeWheel.getCurrentDay(), mTimeWheel.getCurrentHour(), mTimeWheel.getCurrentMinute(), 0);
                 mCurrentMilliseconds = calendar.getTimeInMillis();
                 if (mScrollerConfig.mCallback != null) {
                     mScrollerConfig.mCallback.onSingleDateSet(this, mCurrentMilliseconds);
